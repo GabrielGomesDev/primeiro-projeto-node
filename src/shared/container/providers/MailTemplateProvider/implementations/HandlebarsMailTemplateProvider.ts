@@ -8,7 +8,7 @@ import IParseMailTemplateDTO from '../dtos/IParseMailTemplateDTO';
 class HandlebarsMailTemplateProvider implements IMailTemplateProvider {
   public async parse({ file, variables }: IParseMailTemplateDTO): Promise<string> {
 
-    const templateFileContent = fs.promises.readFile(file, {
+    const templateFileContent = await fs.promises.readFile(file, {
       encoding: 'utf-8',
 
     });
