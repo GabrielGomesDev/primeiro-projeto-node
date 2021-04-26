@@ -1,3 +1,4 @@
+
 import IHashProvider from '../models/IHashProvider';
 
 class FakeHashProvider implements IHashProvider {
@@ -9,5 +10,6 @@ class FakeHashProvider implements IHashProvider {
     return payload === hashed;
   }
 }
+
 
 export default FakeHashProvider;
