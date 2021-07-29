@@ -9,12 +9,13 @@ export default class AppointmentsController {
     const user_id = request.user.id;
     const { provider_id, date } = request.body;
 
-    const parsedDate = parseISO(date);
+    //TODO: Change this later, Insomnia is not passing the Date as a String.
+    //const newdate = '2021-09-20 13:00:00';
 
     const createAppointment = container.resolve(CreateAppointmentService);
 
     const appointment = await createAppointment.execute({
-      date: parsedDate,
+      date: date,
       provider_id,
       user_id,
     });
